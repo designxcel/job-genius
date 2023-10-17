@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 
 const Root = () => {
     return (
-        <div>
+        <div className='font-mohave'>
             <Outlet></Outlet>
         </div>
     );
