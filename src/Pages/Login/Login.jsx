@@ -3,6 +3,7 @@ import loginBG from '../../assets/images/prodbg.jpg'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import Swal from 'sweetalert2';
+import { FaArrowLeft } from 'react-icons/fa';
 
 const Login = () => {
     const {signInUser} = useContext(AuthContext)
@@ -23,7 +24,7 @@ const Login = () => {
             console.log(result.user)
 
             navigate(location?.state? location.state : "/")
-            
+
             const user = {
                 email,
                 lastLoggedAt: result.user.metadata.lastSignInTime
@@ -50,8 +51,14 @@ const Login = () => {
     }
     return (
         <div  style={{backgroundImage: `url(${loginBG})`}} className='bg-cover h-[100vh] flex justify-center items-center'>
-    
+                
                 <div className="shadow-2xl rounded-lg bg-base-100 w-96 h-auto">
+                <div className='text-2xl p-5 hover:text-orange-500 text-cyan-700'>
+                    <Link to="/">
+                        <FaArrowLeft></FaArrowLeft>
+                    </Link>
+                    
+                </div>
                     <form onSubmit={handleLogin} className="card-body">    
                     <h1 className="text-5xl font-bold mb-10 text-center">Login Here!</h1>
                         <div className="form-control">

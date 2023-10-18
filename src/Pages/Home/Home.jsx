@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import { useLoaderData } from 'react-router-dom';
 import BrandCard from '../BrandCard/BrandCard';
+import Delivery from '../Delivery/Delivery';
 
 const Home = () => {
     const brands = useLoaderData();
@@ -25,6 +26,7 @@ const Home = () => {
                     }
                 </div>
             </div>
+            <Delivery></Delivery>
             <Footer></Footer>
         </div>
     );

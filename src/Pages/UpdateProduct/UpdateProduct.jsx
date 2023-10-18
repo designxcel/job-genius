@@ -1,43 +1,18 @@
-import React from 'react';
-import Footer from '../Footer/Footer';
+import Footer from "../Footer/Footer";
 import bg from '../../assets/images/prodbg.jpg'
-import Navbar from '../Navbar/Navbar';
+import Navbar from "../Navbar/Navbar";
 
-const AddProducts = () => {
-    const handleAddProducts = e => {
-        e.preventDefault()
 
-        const form =e.target;
+const UpdateProduct = () => {
+    const handleUpdateProduct =() =>{
 
-        const name = form.name.value;
-        const brand = form.brand.value;
-        const type = form.type.value;
-        const price = form.price.value;
-        const rating = form.rating.value;
-        const photo = form.photo.value;
-        const description = form.description.value;
-
-        const newProduct = {name, brand, type, price, rating, photo, description}
-        // console.log(newProduct)
-
-        fetch('http://localhost:5000/product',{
-            method : 'POST',
-            headers : {
-                'content-type': 'application/json'
-            },
-            body : JSON.stringify(newProduct)
-        })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-        })
     }
     return (
-       <div style={{backgroundImage: `url(${bg})`}} className='bg-cover'>
+        <div style={{backgroundImage: `url(${bg})`}} className='bg-cover'>
             <Navbar></Navbar>
             <div className='max-w-7xl mx-auto py-5'>
-                <h2 className='text-7xl font-bold text-center'>Add Products</h2>
-                <form onSubmit={handleAddProducts} className='mb-10'>
+                <h2 className='text-7xl font-bold text-center'>Update Product</h2>
+                <form onSubmit={handleUpdateProduct} className='mb-10'>
                     <div className='flex flex-col md:flex-row gap-5'>
                         <div className='w-full'>
                             <div className="form-control">
@@ -113,7 +88,7 @@ const AddProducts = () => {
                         <div className='w-full'>
                             <div className="form-control">
                             
-                            <input type="submit" value="Add Product" className='btn btn-block bg-cyan-700 hover:bg-orange-500 text-white' />
+                            <input type="submit" value="Update Product" className='btn btn-block bg-cyan-700 hover:bg-orange-500 text-white' />
                             </div>
                         </div>
                     </div>
@@ -124,4 +99,4 @@ const AddProducts = () => {
     );
 };
 
-export default AddProducts;
+export default UpdateProduct;

@@ -1,7 +1,38 @@
 import mainLogo from '../../assets/images/logo.png'
 import logoIcon from '../../assets/images/icon1.png'
+import Swal from 'sweetalert2';
 
 const Footer = () => {
+    const handleNewsLetter =e =>{
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const message = form.message.value;
+
+        const newsletter = {name, email, message}
+        form.reset();
+
+        fetch('http://localhost:5000/newsletter',{
+            method : 'POST',
+            headers : {
+                'content-type':'application/json'
+            },
+            body: JSON.stringify(newsletter)
+        })
+        .then(res =>res.json())
+        .then(data => {
+            console.log(data)
+            if(data.insertedId){
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'NewsLetter sent Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+            }
+        })
+    }
     return (
         <div>
             <footer className="footer p-10 bg-base-200 text-base-content flex flex-col md:flex-row justify-around items-center">
@@ -12,10 +43,10 @@ const Footer = () => {
                 </div>
                 <div>
                     <header className="footer-title">Newsletter</header>
-                    <form className='space-y-4'>
-                        <input type="text" placeholder="Your Name" className="input input-bordered w-full pr-16" /> 
-                        <input type="text" placeholder="username@site.com" className="input input-bordered w-full pr-16" /> 
-                        <input type="text" placeholder="Your Message" className="h-28 input input-bordered w-full pr-16" /> 
+                    <form onSubmit={handleNewsLetter} className='space-y-4'>
+                        <input type="text" placeholder="Your Name" name="name" className="input input-bordered w-full pr-16" /> 
+                        <input type="text" placeholder="username@site.com" name="email" className="input input-bordered w-full pr-16" /> 
+                        <input type="text" placeholder="Your Message" name="message" className="h-28 input input-bordered w-full pr-16" /> 
                         <input className="btn btn-block bg-cyan-700 hover:bg-orange-500 text-white" type="submit" value="Send Message"/> 
                     </form>
                 </div>
