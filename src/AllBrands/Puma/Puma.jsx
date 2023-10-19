@@ -25,10 +25,22 @@ const Puma = () => {
             <figure><img className='h-60 w-full' src={pumaItem.photo} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title ">{pumaItem.name}</h2>
-                <p className='text-lg font-semibold'>Price: {pumaItem.price}</p>
-                <div className="card-actions justify-end">
-                <button className="btn bg-cyan-700 hover:bg-orange-500 text-white">Buy Now</button>
-                </div>
+                <div className='flex justify-between items-center'>
+                            <p className='text-lg font-semibold'>Brand: {pumaItem.brand}</p>
+                            <p className='text-lg font-semibold'>Type: {pumaItem.type}</p>
+                        </div>
+                        <div className='flex justify-between items-center'>
+                            <p className='text-lg font-semibold'>Price: {pumaItem.price}</p>
+                            <p className='text-lg '>Rating: {pumaItem.rating}</p>
+                        </div>
+                        <div className="card-actions justify-center items-center">
+                            <Link>
+                                <button className="btn bg-cyan-700 hover:bg-orange-500 text-white">Details</button>
+                            </Link>
+                            <Link>
+                                <button className="btn bg-cyan-700 hover:bg-orange-500 text-white">Update</button>
+                            </Link>
+                        </div>
             </div>
             </div>
             )

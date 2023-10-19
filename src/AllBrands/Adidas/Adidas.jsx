@@ -1,5 +1,4 @@
-import adiBG from '../../assets/images/wave.svg'
-import logo from '../../assets/brandLogo/adidas.png'
+
 import { Link, useLoaderData } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import Slider from '../../Pages/Slider/Slider';
@@ -24,10 +23,22 @@ const Adidas = () => {
                         <figure><img className='h-60 w-full' src={adiItem.photo} alt="Shoes" /></figure>
                         <div className="card-body">
                             <h2 className="card-title ">{adiItem.name}</h2>
+                            <div className='flex justify-between items-center'>
+                            <p className='text-lg font-semibold'>Brand: {adiItem.brand}</p>
+                            <p className='text-lg font-semibold'>Type: {adiItem.type}</p>
+                        </div>
+                        <div className='flex justify-between items-center'>
                             <p className='text-lg font-semibold'>Price: {adiItem.price}</p>
-                            <div className="card-actions justify-end">
-                            <button className="btn bg-cyan-700 hover:bg-orange-500 text-white">Buy Now</button>
-                            </div>
+                            <p className='text-lg '>Rating: {adiItem.rating}</p>
+                        </div>
+                        <div className="card-actions justify-center items-center">
+                            <Link>
+                                <button className="btn bg-cyan-700 hover:bg-orange-500 text-white">Details</button>
+                            </Link>
+                            <Link>
+                                <button className="btn bg-cyan-700 hover:bg-orange-500 text-white">Update</button>
+                            </Link>
+                        </div>
                         </div>
                         </div>
                         )

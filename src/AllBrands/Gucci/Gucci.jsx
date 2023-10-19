@@ -24,9 +24,21 @@ const Gucci = () => {
                     <figure><img className='h-60 w-full' src={gucciItem.photo} alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title ">{gucciItem.name}</h2>
-                        <p className='text-lg font-semibold'>Price: {gucciItem.price}</p>
-                        <div className="card-actions justify-end">
-                        <button className="btn bg-cyan-700 hover:bg-orange-500 text-white">Buy Now</button>
+                        <div className='flex justify-between items-center'>
+                            <p className='text-lg font-semibold'>Brand: {gucciItem.brand}</p>
+                            <p className='text-lg font-semibold'>Type: {gucciItem.type}</p>
+                        </div>
+                        <div className='flex justify-between items-center'>
+                            <p className='text-lg font-semibold'>Price: {gucciItem.price}</p>
+                            <p className='text-lg '>Rating: {gucciItem.rating}</p>
+                        </div>
+                        <div className="card-actions justify-center items-center">
+                            <Link>
+                                <button className="btn bg-cyan-700 hover:bg-orange-500 text-white">Details</button>
+                            </Link>
+                            <Link>
+                                <button className="btn bg-cyan-700 hover:bg-orange-500 text-white">Update</button>
+                            </Link>
                         </div>
                     </div>
                     </div>

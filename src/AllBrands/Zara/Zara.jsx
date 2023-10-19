@@ -24,10 +24,22 @@ const Zara = () => {
                         <figure><img className='h-60 w-full' src={zaraItem.photo} alt="Shoes" /></figure>
                         <div className="card-body">
                             <h2 className="card-title ">{zaraItem.name}</h2>
+                            <div className='flex justify-between items-center'>
+                            <p className='text-lg font-semibold'>Brand: {zaraItem.brand}</p>
+                            <p className='text-lg font-semibold'>Type: {zaraItem.type}</p>
+                        </div>
+                        <div className='flex justify-between items-center'>
                             <p className='text-lg font-semibold'>Price: {zaraItem.price}</p>
-                            <div className="card-actions justify-end">
-                            <button className="btn bg-cyan-700 hover:bg-orange-500 text-white">Buy Now</button>
-                            </div>
+                            <p className='text-lg '>Rating: {zaraItem.rating}</p>
+                        </div>
+                        <div className="card-actions justify-center items-center">
+                            <Link>
+                                <button className="btn bg-cyan-700 hover:bg-orange-500 text-white">Details</button>
+                            </Link>
+                            <Link>
+                                <button className="btn bg-cyan-700 hover:bg-orange-500 text-white">Update</button>
+                            </Link>
+                        </div>
                         </div>
                         </div>
                         )
