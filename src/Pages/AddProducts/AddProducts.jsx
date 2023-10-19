@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from '../Footer/Footer';
 import bg from '../../assets/images/prodbg.jpg'
 import Navbar from '../Navbar/Navbar';
+import Swal from 'sweetalert2';
 
 const AddProducts = () => {
     const handleAddProducts = e => {
@@ -18,7 +19,7 @@ const AddProducts = () => {
         const description = form.description.value;
 
         const newProduct = {name, brand, type, price, rating, photo, description}
-        // console.log(newProduct)
+        
 
         fetch('http://localhost:5000/product',{
             method : 'POST',
@@ -30,7 +31,16 @@ const AddProducts = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data)
+            Swal.fire({
+                title: 'Success!',
+                text: 'Product added Successfully',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+              })
+
         })
+
+        
     }
     return (
        <div style={{backgroundImage: `url(${bg})`}} className='bg-cover'>

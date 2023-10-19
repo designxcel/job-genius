@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Footer from '../Footer/Footer';
+import Adidas from '../AllProducts/AllProducts';
 
 const Brand = () => {
+
+
     const handleAddBrand = e =>{
         e.preventDefault()
         const form = e.target;
@@ -58,7 +61,7 @@ const Brand = () => {
                             </div>
                         </div>
                     </div>
-                </form>
+            </form>
         </div>
         <Footer></Footer>
         </div>

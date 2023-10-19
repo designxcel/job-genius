@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
 
 
 const BrandCard = ({brand}) => {
-    const {photo, name} = brand;
+    // const {photo, name} = brand;
+
 
     return (
         <div className="card bg-base-100 shadow-xl h-64 px-4">
@@ -11,7 +13,10 @@ const BrandCard = ({brand}) => {
                 {name}
                 </h2>
             </div>
-            <button className="btn btn-block bg-cyan-700 hover:bg-orange-500 text-white mt-8">View Details</button>
+            <Link>
+                <button className="btn btn-block bg-cyan-700 hover:bg-orange-500 text-white mt-8">View Details</button>
+            </Link>
+            
         </div>
     );
 };
