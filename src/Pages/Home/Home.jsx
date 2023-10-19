@@ -8,7 +8,6 @@ import Delivery from '../Delivery/Delivery';
 
 const Home = () => {
     const brands = useLoaderData();
-    // const {photo} = brands
 
     return (
         <div>
@@ -32,9 +31,6 @@ const Home = () => {
                                     {brand.name}
                                     </h2>
                                 </div>
-                                {/* <Link>
-                                    <button className="btn btn-block bg-cyan-700 hover:bg-orange-500 text-white mt-8">View Details</button>
-                                </Link> */}
 
                                 <Link to={`/brand/${brand.name}`}>
                                     <button className="btn btn-block bg-cyan-700 hover:bg-orange-500 text-white mt-8">

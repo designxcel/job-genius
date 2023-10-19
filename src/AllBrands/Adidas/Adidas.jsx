@@ -1,16 +1,22 @@
 import adiBG from '../../assets/images/wave.svg'
 import logo from '../../assets/brandLogo/adidas.png'
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
+import Slider from '../../Pages/Slider/Slider';
 
 const Adidas = () => {
     const brandAdidas = useLoaderData();
     // const {photo, name, price} = brandAdidas;
     return (
-        <div className='max-w-7xl mx-auto'>
-            <div className='flex justify-end h-[40vh] bg-cover' style={{backgroundImage: `url(${adiBG})`}}>
-                <img className='w-96' src={logo} alt="" />
+        <div>
+            <div className='mt-4 ml-10 flex justify-start items-center gap-4'>
+                <FaArrowLeft></FaArrowLeft>
+                <Link to="/">
+                        <h2 className='text-lg underline text-blue-700'>Home / Brand</h2>
+                </Link>
             </div>
-
+            <Slider></Slider>
+            <div className='max-w-7xl mx-auto'>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mt-10'>
                 {
                     brandAdidas.map(adiItem =>
@@ -27,6 +33,7 @@ const Adidas = () => {
                         )
                 }
             </div>
+        </div>
         </div>
     );
 };
