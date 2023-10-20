@@ -28,7 +28,7 @@ const Router = createBrowserRouter([
             {
                 path : "/", 
                 element : <Home></Home>,
-                loader :() => fetch('http://localhost:5000/brand')
+                loader :() => fetch('https://fashion-brand-server-side-9ba70kr3b.vercel.app/brand')
             },
             {
                 path : "/addproducts",
@@ -51,32 +51,32 @@ const Router = createBrowserRouter([
             {
                 path: "/brand/adidas",
                 element : <Adidas></Adidas>,
-                loader : () => fetch('http://localhost:5000/product/adidas')
+                loader : () => fetch('https://fashion-brand-server-side-9ba70kr3b.vercel.app/product/adidas')
             },
             {
                 path: "/brand/puma",
                 element : <Puma></Puma>,
-                loader : () => fetch('http://localhost:5000/product/puma')
+                loader : () => fetch('https://fashion-brand-server-side-9ba70kr3b.vercel.app/product/puma')
             },
             {
                 path: "/brand/nike",
                 element : <Nike></Nike>,
-                loader : () => fetch('http://localhost:5000/product/nike')
+                loader : () => fetch('https://fashion-brand-server-side-9ba70kr3b.vercel.app/product/nike')
             },
             {
                 path: "/brand/gucci",
                 element : <Gucci></Gucci>,
-                loader : () => fetch('http://localhost:5000/product/gucci')
+                loader : () => fetch('https://fashion-brand-server-side-9ba70kr3b.vercel.app/product/gucci')
             },
             {
                 path: "/brand/levis",
                 element : <Levis></Levis>,
-                loader : () => fetch('http://localhost:5000/product/levis')
+                loader : () => fetch('https://fashion-brand-server-side-9ba70kr3b.vercel.app/product/levis')
             },
             {
                 path: "/brand/zara",
                 element : <Zara></Zara>,
-                loader : () => fetch('http://localhost:5000/product/zara')
+                loader : () => fetch('https://fashion-brand-server-side-9ba70kr3b.vercel.app/product/zara')
             },
             {
                 path :"/login",
@@ -89,7 +89,7 @@ const Router = createBrowserRouter([
             {
                 path: "/allproducts",
                 element: <AllProducts></AllProducts>,
-                loader : () => fetch('http://localhost:5000/product')
+                loader : () => fetch('https://fashion-brand-server-side-9ba70kr3b.vercel.app/product')
             },
             {
                 path: "/blog",
