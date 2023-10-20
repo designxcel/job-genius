@@ -13,7 +13,7 @@ const SignUp = () => {
         const email = form.email.value;
         const password = form.password.value;
         const name = form.name.value;
-        // const photo = form.photo.value;
+        const photo = form.photo.value;
         form.reset();
         if(password.length < 6){
             
@@ -52,7 +52,7 @@ const SignUp = () => {
             .then(result => {
                 console.log(result.user)
                 const createdAt = result.user?.metadata?.creationTime;
-                const user = {email, password, name, createdAt}
+                const user = {email, photo, password, name, createdAt}
                 fetch('http://localhost:5000/user', {
                     method: 'POST',
                     headers: {
@@ -84,11 +84,17 @@ const SignUp = () => {
                 <div className="shadow-2xl rounded-lg bg-base-100 w-96 h-auto">
                     <form onSubmit={handleSignUp} className="card-body">    
                     <h1 className="text-5xl font-bold mb-6 text-center">Sigup Here!</h1>
-                    <div className="form-control">
+                        <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
                             <input type="text" name="name" placeholder="Name" className="input input-bordered" />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Photo URL</span>
+                            </label>
+                            <input type="text" name="photo" placeholder="Photo Url" className="input input-bordered" />
                         </div>
 
                         <div className="form-control">

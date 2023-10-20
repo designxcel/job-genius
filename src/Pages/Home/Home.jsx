@@ -13,7 +13,7 @@ const Home = () => {
         <div>
             <Navbar></Navbar>
             <Header></Header>
-            <div className='h-[50vh]'>
+            <div className='h-auto'>
                 <h2 className='text-center font-bold text-5xl mt-16'>All Brands</h2>
                 <div className='max-w-3xl mx-auto'>
                     <p className='text-center mt-5 text-gray-400'>Clothing describes the material and the technical garment, devoid of any social meaning or connections; costume has come to mean fancy dress or masquerade wear.</p>

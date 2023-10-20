@@ -1,8 +1,9 @@
 import { useContext } from 'react';
-import mainLogo from '../../assets/images/logo.png'
+
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import Swal from 'sweetalert2';
+import userIcon from '../../assets/images/user.png'
 
 const Navbar = () => {
 
@@ -25,10 +26,10 @@ const Navbar = () => {
     const menus = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/addproducts">Add Products</NavLink></li>
-        {/* <li><NavLink to="/gallery">Gallery</NavLink></li> */}
-        <li><NavLink to="/blogs">Blogs</NavLink></li>
+        <li><NavLink to="/blog">Blogs</NavLink></li>
         <li><NavLink to="/login">Login/Register</NavLink></li>
     </>
+
     return (
         <div className="navbar bg-base-100 px-4">
             <div className="navbar-start">
@@ -40,7 +41,9 @@ const Navbar = () => {
                     {menus}
                 </ul>
                 </div>
-                <img className='w-52' src={mainLogo} alt="Menz Option" />
+                <Link to="/">
+                <h2 className='font-bold text-4xl text-orange-500'>MENZWO OPTION</h2>
+                </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -48,24 +51,25 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                
-                {/* <button className="btn btn-primary">View cart</button> */}
-                {/* <a className="btn btn-primary">Login</a> */}
 
+                
+                
                 {
                     user ?
                     <button onClick={handleSignOut} className="btn btn-primary">SignOut</button>
                     :
-                    <Link>
-                    <button className="btn btn-primary">Login</button>
-                </Link>
+                    <Link to="/login">
+                        <button className="btn btn-primary">Login</button>
+                    </Link>
                 }
                 
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                     <div className="w-10 rounded-full">
-                    <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                    <img src={userIcon} />
                     </div>
                 </label>
+
+                
             </div>
         </div>
     );

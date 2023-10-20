@@ -19,7 +19,7 @@ const Levis = () => {
             <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mt-10'>
                 {
                     brandLevis.map(levisItem =>
-                        <div className="card w-96 bg-base-100 shadow-xl p-5">
+                        <div className="card md:w-96 bg-base-100 shadow-xl p-5">
                         <figure><img className='h-60 w-full' src={levisItem.photo} alt="Shoes" /></figure>
                         <div className="card-body">
                             <h2 className="card-title ">{levisItem.name}</h2>

@@ -16,11 +16,14 @@ import Gucci from '../AllBrands/Gucci/Gucci';
 import Levis from '../AllBrands/Levis/Levis';
 import Zara from '../AllBrands/Zara/Zara';
 import Details from '../Pages/Details/Details';
+import Error from '../Pages/Error/Error';
+import Blog from '../Pages/Blog/Blog';
 
 const Router = createBrowserRouter([
     {
         path : "/",
         element : <Root></Root>,
+        errorElement: <Error></Error>,
         children : [
             {
                 path : "/", 
@@ -33,8 +36,7 @@ const Router = createBrowserRouter([
             },
             {
                 path :`/updateproduct`,
-                element :<UpdateProduct></UpdateProduct>,
-                loader : ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+                element :<UpdateProduct></UpdateProduct>
             },
             {
                 path: "/details",
@@ -86,7 +88,12 @@ const Router = createBrowserRouter([
             },
             {
                 path: "/allproducts",
-                element: <AllProducts></AllProducts>
+                element: <AllProducts></AllProducts>,
+                loader : () => fetch('http://localhost:5000/product')
+            },
+            {
+                path: "/blog",
+                element: <Blog></Blog>
             }
         ]
     }

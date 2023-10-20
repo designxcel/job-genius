@@ -21,7 +21,7 @@ const Puma = () => {
 <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mt-10'>
     {
         brandPuma.map(pumaItem =>
-            <div className="card w-96 bg-base-100 shadow-xl p-5">
+            <div className="card md:w-96 bg-base-100 shadow-xl p-5">
             <figure><img className='h-60 w-full' src={pumaItem.photo} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title ">{pumaItem.name}</h2>

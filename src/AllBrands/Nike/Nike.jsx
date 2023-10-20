@@ -5,7 +5,6 @@ import Slider from '../../Pages/Slider/Slider';
 
 const Nike = () => {
     const brandNike = useLoaderData();
-    const {_id} = brandNike;
     return (
         <div>
             <div className='mt-4 ml-10 flex justify-start items-center gap-4'>
@@ -35,7 +34,7 @@ const Nike = () => {
                             <Link>
                                 <button className="btn bg-cyan-700 hover:bg-orange-500 text-white">Details</button>
                             </Link>
-                            <Link to={`updateproduct/${_id}`}>
+                            <Link>
                                 <button className="btn bg-cyan-700 hover:bg-orange-500 text-white">Update</button>
                             </Link>
                         </div>

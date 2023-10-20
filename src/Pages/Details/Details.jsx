@@ -3,7 +3,7 @@ import React from 'react';
 const Details = () => {
     return (
         <div>
-            its details
+            its details (not Done yet)
         </div>
     );
 };

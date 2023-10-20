@@ -1,6 +1,7 @@
 import mainLogo from '../../assets/images/logo.png'
 import logoIcon from '../../assets/images/icon1.png'
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     const handleNewsLetter =e =>{
@@ -37,8 +38,10 @@ const Footer = () => {
         <div>
             <footer className="footer p-10 bg-base-200 text-base-content flex flex-col md:flex-row justify-around items-center">
                 <div>
+                    <Link to="/">
                     <img className='w-32' src={logoIcon} alt="" />
-                    <h2 className='font-bold text-4xl tracking-wider text-orange-500'>MENZ OPTION</h2>
+                    </Link>
+                    <h2 className='font-bold text-4xl tracking-wider text-orange-500'>MENZWO OPTION</h2>
                     <p className='text-lg'>You are already famous, just put your best clothes on.</p>
                 </div>
                 <div>
@@ -53,7 +56,7 @@ const Footer = () => {
             </footer>
 
             <aside className='h-10 flex justify-center items-center'>
-                <p className='text-gray-500'>Copyright © 2023 - All right reserved by MENZ OPTION</p>
+                <p className='text-gray-500'>Copyright © 2023 - All right reserved by MENZWO OPTION</p>
             </aside>
         </div>
     );
