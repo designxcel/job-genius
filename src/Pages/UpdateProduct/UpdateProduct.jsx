@@ -23,7 +23,7 @@ const UpdateProduct = () => {
         const description = form.description.value;
         const updatedProduct = {name, brand, type, price, rating, photo, description}
         form.reset()
-        fetch(`https://fashion-brand-server-side-9ba70kr3b.vercel.app/product/${_id}`,{
+        fetch(`https://fashion-brand-server-side.vercel.app/product/${_id}`,{
             method : 'PUT',
             headers : {
                 'content-type':'application/json'

@@ -54,7 +54,7 @@ const Login = () => {
                 lastLoggedAt: result.user.metadata.lastSignInTime
                 
             }
-            fetch('https://fashion-brand-server-side-9ba70kr3b.vercel.app/user', {
+            fetch('https://fashion-brand-server-side.vercel.app/user', {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json'

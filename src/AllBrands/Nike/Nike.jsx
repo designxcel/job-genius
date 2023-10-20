@@ -2,9 +2,21 @@
 import { Link, useLoaderData } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import Slider from '../../Pages/Slider/Slider';
+import { useState } from 'react';
 
 const Nike = () => {
     const brandNike = useLoaderData();
+    const{_id} = brandNike
+    const [product, setProduct] = useState(null)
+
+    const handleView = _id =>{
+        fetch(`https://fashion-brand-server-side.vercel.app/product/${_id}`)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setProduct(data)
+            })
+    }
     return (
         <div>
             <div className='mt-4 ml-10 flex justify-start items-center gap-4'>
@@ -31,10 +43,10 @@ const Nike = () => {
                             <p className='text-lg '>Rating: {nikeItem.rating}</p>
                         </div>
                         <div className="card-actions justify-center items-center">
-                            <Link>
-                                <button className="btn bg-cyan-700 hover:bg-orange-500 text-white">Details</button>
+                            <Link to={`/details/${_id}`}>
+                                <button onClick={() => handleView(_id)} className="btn bg-cyan-700 hover:bg-orange-500 text-white">Details</button>
                             </Link>
-                            <Link>
+                            <Link to={`/updateproduct/${brandNike?._id}`}>
                                 <button className="btn bg-cyan-700 hover:bg-orange-500 text-white">Update</button>
                             </Link>
                         </div>
