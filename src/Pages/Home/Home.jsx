@@ -22,7 +22,7 @@ const Home = () => {
                     
                 <div className='max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-6 gap-5 mt-10'>
                     {
-                        // brands.map(brand => <BrandCard key={brand._id} brand={brand}></BrandCard>)
+                        
                         brands.map(brand => 
                             <div className="card bg-base-100 shadow-xl h-64 px-4">
                                 <figure><img className="h-32" src={brand.photo} alt="Brand" /></figure>

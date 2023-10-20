@@ -15,6 +15,7 @@ import Nike from '../AllBrands/Nike/Nike';
 import Gucci from '../AllBrands/Gucci/Gucci';
 import Levis from '../AllBrands/Levis/Levis';
 import Zara from '../AllBrands/Zara/Zara';
+import Details from '../Pages/Details/Details';
 
 const Router = createBrowserRouter([
     {
@@ -31,8 +32,14 @@ const Router = createBrowserRouter([
                 element : <PrivateRoute><AddProducts></AddProducts></PrivateRoute>
             },
             {
-                path :"/updateproduct",
-                element :<UpdateProduct></UpdateProduct>
+                path :`/updateproduct`,
+                element :<UpdateProduct></UpdateProduct>,
+                loader : ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+            },
+            {
+                path: "/details",
+                element : <Details></Details>
+
             },
             {
                 path :"/brand",
