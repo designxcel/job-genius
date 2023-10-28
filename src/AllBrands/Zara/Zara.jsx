@@ -33,10 +33,10 @@ const Zara = () => {
                             <p className='text-lg '>Rating: {zaraItem.rating}</p>
                         </div>
                         <div className="card-actions justify-center items-center">
-                            <Link>
+                            <Link to={`/details/${zaraItem._id}`}>
                                 <button className="btn bg-cyan-700 hover:bg-orange-500 text-white">Details</button>
                             </Link>
-                            <Link>
+                            <Link to={`/updateproduct/${zaraItem._id}`}>
                                 <button className="btn bg-cyan-700 hover:bg-orange-500 text-white">Update</button>
                             </Link>
                         </div>

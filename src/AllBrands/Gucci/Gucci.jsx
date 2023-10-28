@@ -33,10 +33,10 @@ const Gucci = () => {
                             <p className='text-lg '>Rating: {gucciItem.rating}</p>
                         </div>
                         <div className="card-actions justify-center items-center">
-                            <Link>
+                            <Link to={`/details/${gucciItem._id}`}>
                                 <button className="btn bg-cyan-700 hover:bg-orange-500 text-white">Details</button>
                             </Link>
-                            <Link>
+                            <Link to={`/updateproduct/${gucciItem._id}`}>
                                 <button className="btn bg-cyan-700 hover:bg-orange-500 text-white">Update</button>
                             </Link>
                         </div>

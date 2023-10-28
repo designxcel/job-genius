@@ -21,7 +21,7 @@ const Puma = () => {
 <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mt-10'>
     {
         brandPuma.map(pumaItem =>
-            <div className="card md:w-96 bg-base-100 shadow-xl p-5">
+            <div key={pumaItem._id} className="card md:w-96 bg-base-100 shadow-xl p-5">
             <figure><img className='h-60 w-full' src={pumaItem.photo} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title ">{pumaItem.name}</h2>
@@ -34,10 +34,10 @@ const Puma = () => {
                             <p className='text-lg '>Rating: {pumaItem.rating}</p>
                         </div>
                         <div className="card-actions justify-center items-center">
-                            <Link>
+                            <Link to={`/details/${pumaItem._id}`}>
                                 <button className="btn bg-cyan-700 hover:bg-orange-500 text-white">Details</button>
                             </Link>
-                            <Link>
+                            <Link to={`/updateproduct/${pumaItem._id}`}>
                                 <button className="btn bg-cyan-700 hover:bg-orange-500 text-white">Update</button>
                             </Link>
                         </div>

@@ -1,13 +1,13 @@
 import Footer from "../Footer/Footer";
-import bg from '../../assets/images/prodbg.jpg'
 import Navbar from "../Navbar/Navbar";
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const UpdateProduct = () => {
     const detailProduct = useLoaderData();
 
-    const{_id, name, brand, type, price, rating, photo, description} = detailProduct
+    const{_id, name, brand, type, price, rating, photo, description} = detailProduct;
 
     const handleUpdateProduct =e =>{
         e.preventDefault();
@@ -23,7 +23,7 @@ const UpdateProduct = () => {
         const description = form.description.value;
         const updatedProduct = {name, brand, type, price, rating, photo, description}
         form.reset()
-        fetch(`https://fashion-brand-server-side.vercel.app/product/${_id}`,{
+        fetch(`http://localhost:5000/product/${_id}`,{
             method : 'PUT',
             headers : {
                 'content-type':'application/json'
@@ -36,7 +36,7 @@ const UpdateProduct = () => {
             if(data.modifiedCount>0){
                 Swal.fire({
                     title: 'Success!',
-                    text: 'Coffee updated Successfully',
+                    text: 'Updated Successfully',
                     icon: 'success',
                     confirmButtonText: 'Cool'
                   })
@@ -46,7 +46,7 @@ const UpdateProduct = () => {
 
     }
     return (
-        <div style={{backgroundImage: `url(${bg})`}} className='bg-cover'>
+        <div>
             <Navbar></Navbar>
             <div className='max-w-7xl mx-auto py-5'>
                 <h2 className='text-7xl font-bold text-center'>Update Product: {name}</h2>

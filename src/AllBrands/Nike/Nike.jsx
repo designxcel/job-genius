@@ -10,7 +10,7 @@ const Nike = () => {
     const [product, setProduct] = useState(null)
 
     const handleView = _id =>{
-        fetch(`https://fashion-brand-server-side.vercel.app/product/${_id}`)
+        fetch(`http://localhost:5000/product/${_id}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -43,10 +43,10 @@ const Nike = () => {
                             <p className='text-lg '>Rating: {nikeItem.rating}</p>
                         </div>
                         <div className="card-actions justify-center items-center">
-                            <Link to={`/details/${_id}`}>
-                                <button onClick={() => handleView(_id)} className="btn bg-cyan-700 hover:bg-orange-500 text-white">Details</button>
+                        <Link to={`/details/${nikeItem._id}`}>
+                                <button className="btn bg-cyan-700 hover:bg-orange-500 text-white">Details</button>
                             </Link>
-                            <Link to={`/updateproduct/${brandNike?._id}`}>
+                            <Link to={`/updateproduct/${nikeItem._id}`}>
                                 <button className="btn bg-cyan-700 hover:bg-orange-500 text-white">Update</button>
                             </Link>
                         </div>

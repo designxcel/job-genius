@@ -32,10 +32,10 @@ const Levis = () => {
                             <p className='text-lg '>Rating: {levisItem.rating}</p>
                         </div>
                         <div className="card-actions justify-center items-center">
-                            <Link>
+                            <Link to={`/details/${levisItem._id}`}>
                                 <button className="btn bg-cyan-700 hover:bg-orange-500 text-white">Details</button>
                             </Link>
-                            <Link>
+                            <Link to={`/updateproduct/${levisItem._id}`}>
                                 <button className="btn bg-cyan-700 hover:bg-orange-500 text-white">Update</button>
                             </Link>
                         </div>

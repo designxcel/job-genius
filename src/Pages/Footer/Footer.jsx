@@ -14,7 +14,7 @@ const Footer = () => {
         const newsletter = {name, email, message}
         form.reset();
 
-        fetch('https://fashion-brand-server-side.vercel.app/newsletter',{
+        fetch('http://localhost:5000/newsletter',{
             method : 'POST',
             headers : {
                 'content-type':'application/json'
@@ -39,7 +39,7 @@ const Footer = () => {
             <footer className="footer p-10 bg-base-200 text-base-content flex flex-col md:flex-row justify-around items-center">
                 <div>
                     <Link to="/">
-                    <img className='w-32' src={logoIcon} alt="" />
+                        <img className='w-32' src={logoIcon} alt="" />
                     </Link>
                     <h2 className='font-bold text-4xl tracking-wider text-orange-500'>MENZWO OPTION</h2>
                     <p className='text-lg'>You are already famous, just put your best clothes on.</p>

@@ -1,11 +1,13 @@
 import { useContext } from 'react';
 import signupBG from '../../assets/images/prodbg.jpg'
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 
 const SignUp = () => {
     const {createUser} = useContext(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
 
     const handleSignUp = e =>{
         e.preventDefault();
@@ -53,7 +55,7 @@ const SignUp = () => {
                 console.log(result.user)
                 const createdAt = result.user?.metadata?.creationTime;
                 const user = {email, photo, password, name, createdAt}
-                fetch('https://fashion-brand-server-side.vercel.app/user', {
+                fetch('http://localhost:5000/user', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -64,6 +66,7 @@ const SignUp = () => {
                 .then(data => {
                     console.log(data)
                     if(data.insertedId){
+                        navigate(location?.state? location.state : "/login")
                         Swal.fire({
                             title: 'Success!',
                         text: 'Account Created Successfully',
@@ -83,7 +86,7 @@ const SignUp = () => {
     
                 <div className="shadow-2xl rounded-lg bg-base-100 w-96 h-auto">
                     <form onSubmit={handleSignUp} className="card-body">    
-                    <h1 className="text-5xl font-bold mb-6 text-center">Sigup Here!</h1>
+                    <h1 className="text-5xl font-bold mb-6 text-center">Signup Here!</h1>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Name</span>
@@ -111,7 +114,7 @@ const SignUp = () => {
                         
                         </div>
                         <div className="form-control mt-10">
-                            <button className="btn btn-primary">Sigup</button>
+                            <button className="btn btn-primary">Signup</button>
                         </div>
                     </form>
                     

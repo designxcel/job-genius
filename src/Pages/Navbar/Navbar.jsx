@@ -28,6 +28,12 @@ const Navbar = () => {
         <li><NavLink to="/addproducts">Add Products</NavLink></li>
         <li><NavLink to="/blog">Blogs</NavLink></li>
         <li><NavLink to="/login">Login/Register</NavLink></li>
+        {
+          user?.email? 
+          <li><Link to="/cart">My Bookings</Link></li>
+          :
+          <li><Link to="/cart">Cart</Link></li>
+        }
     </>
 
     return (
@@ -55,8 +61,11 @@ const Navbar = () => {
                 
                 
                 {
-                    user ?
-                    <button onClick={handleSignOut} className="btn btn-primary">SignOut</button>
+                    user ?.email?
+                    <>
+                        <h2 className="text-primary font-semibold mr-4">{user?.email}</h2>
+                        <button onClick={handleSignOut} className="btn btn-primary">SignOut</button>
+                    </>
                     :
                     <Link to="/login">
                         <button className="btn btn-primary">Login</button>

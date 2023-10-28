@@ -24,7 +24,7 @@ const Home = () => {
                     {
                         
                         brands.map(brand => 
-                            <div className="card bg-base-100 shadow-xl h-64 px-4">
+                            <div key={brand._id} className="card bg-base-100 shadow-xl h-64 px-4">
                                 <figure><img className="h-32" src={brand.photo} alt="Brand" /></figure>
                                 <div className="flex justify-center">
                                     <h2 className="card-title text-3xl text-orange-500 font-bold tracking-wider">

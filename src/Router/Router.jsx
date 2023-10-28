@@ -18,6 +18,8 @@ import Zara from '../AllBrands/Zara/Zara';
 import Details from '../Pages/Details/Details';
 import Error from '../Pages/Error/Error';
 import Blog from '../Pages/Blog/Blog';
+import CheckOut from '../Pages/CheckOut/CheckOut';
+import Cart from '../Pages/Cart/Cart';
 
 const Router = createBrowserRouter([
     {
@@ -28,19 +30,22 @@ const Router = createBrowserRouter([
             {
                 path : "/", 
                 element : <Home></Home>,
-                loader :() => fetch('https://fashion-brand-server-side.vercel.app/brand')
+                loader :() => fetch('http://localhost:5000/brand')
             },
             {
                 path : "/addproducts",
                 element : <PrivateRoute><AddProducts></AddProducts></PrivateRoute>
             },
+            
             {
-                path :"/updateproduct",
-                element :<UpdateProduct></UpdateProduct>
+                path: "/updateproduct/:id",
+                element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
+                loader: ({params})=> fetch(`http://localhost:5000/product/${params.id}`)
             },
             {
                 path: "/details/:id",
-                element : <Details></Details>
+                element : <PrivateRoute><Details></Details></PrivateRoute>,
+                loader: ({params})=> fetch(`http://localhost:5000/product/${params.id}`)
 
             },
             {
@@ -89,11 +94,20 @@ const Router = createBrowserRouter([
             {
                 path: "/allproducts",
                 element: <AllProducts></AllProducts>,
-                loader : () => fetch('https://fashion-brand-server-side.vercel.app/product')
+                loader : () => fetch('http://localhost:5000/product')
             },
             {
                 path: "/blog",
                 element: <Blog></Blog>
+            },
+            {
+                path: "/checkout/:id",
+                element: <CheckOut></CheckOut>,
+                loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+            },
+            {
+                path: "/cart",
+                element: <PrivateRoute><Cart></Cart></PrivateRoute>
             }
         ]
     }
