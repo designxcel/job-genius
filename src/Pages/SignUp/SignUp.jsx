@@ -55,7 +55,7 @@ const SignUp = () => {
                 console.log(result.user)
                 const createdAt = result.user?.metadata?.creationTime;
                 const user = {email, photo, password, name, createdAt}
-                fetch('http://localhost:5000/user', {
+                fetch('https://fashion-brand-server-side.vercel.app/user', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

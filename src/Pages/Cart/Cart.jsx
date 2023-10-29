@@ -10,7 +10,7 @@ const Cart = () => {
     const {user} = useContext(AuthContext)
     const [cartProduct, setCartProduct] = useState([])
     useEffect(() =>{
-        fetch(`http://localhost:5000/bookings?email=${user?.email}`)
+        fetch(`https://fashion-brand-server-side.vercel.app/bookings?email=${user?.email}`)
         .then(res => res.json())
         .then(data => setCartProduct(data))
     },[])
@@ -27,7 +27,7 @@ const Cart = () => {
           }).then((result) => {
             if (result.isConfirmed) {
               
-            fetch(`http://localhost:5000/bookings/${id}`, {
+            fetch(`https://fashion-brand-server-side.vercel.app/bookings/${id}`, {
                 method : 'DELETE'
             })
             .then(res => res.json())

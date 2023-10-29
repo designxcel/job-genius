@@ -9,14 +9,14 @@ const Nike = () => {
     const{_id} = brandNike
     const [product, setProduct] = useState(null)
 
-    const handleView = _id =>{
-        fetch(`http://localhost:5000/product/${_id}`)
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                setProduct(data)
-            })
-    }
+    // const handleView = _id =>{
+    //     fetch(`http://localhost:5000/product/${_id}`)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             console.log(data)
+    //             setProduct(data)
+    //         })
+    // }
     return (
         <div>
             <div className='mt-4 ml-10 flex justify-start items-center gap-4'>

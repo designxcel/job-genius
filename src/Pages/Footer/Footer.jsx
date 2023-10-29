@@ -14,7 +14,7 @@ const Footer = () => {
         const newsletter = {name, email, message}
         form.reset();
 
-        fetch('http://localhost:5000/newsletter',{
+        fetch('https://fashion-brand-server-side.vercel.app/newsletter',{
             method : 'POST',
             headers : {
                 'content-type':'application/json'
