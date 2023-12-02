@@ -14,7 +14,7 @@ const Header = () => {
                 <h2 className='text-8xl'>COLLECTION</h2>
 
                 <Link to="/allproducts">
-                <button className='btn btn-block bg-cyan-700 text-white hover:bg-orange-500 tracking-widest text-2xl'>ORDER NOW</button>
+                    <button className='btn md:btn-block bg-cyan-700 text-white hover:bg-orange-500 tracking-widest text-2xl'>ORDER NOW</button>
                 </Link>
                 
             </div>

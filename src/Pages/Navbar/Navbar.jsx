@@ -29,7 +29,6 @@ const Navbar = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/addproducts">Add Products</NavLink></li>
         <li><NavLink to="/blog">Blogs</NavLink></li>
-        {/* <li><NavLink to="/login">Login/Register</NavLink></li> */}
         { user?.email? <>
             <li><Link to="/cart">Cart</Link></li>
         </> 
@@ -68,13 +67,13 @@ const Navbar = () => {
                     <>
                         <h2 className="text-primary font-semibold mr-4">{user?.email}</h2>
                         <button onClick={handleSignOut} className="btn btn-primary">SignOut</button>
+                        
                     </>
                     :
                     <Link to="/login">
                         <button className="btn btn-primary">Login</button>
                     </Link>
                 }
-                
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                     <div className="w-10 rounded-full">
                     <img src={userIcon} />

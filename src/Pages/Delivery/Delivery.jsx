@@ -2,7 +2,7 @@
 import icon from '../../assets/images/cruise.png'
 const Delivery = () => {
     return (
-        <div className='text-center space-y-4 h-[550px] mt-10'>
+        <div className='bg-gray-100 p-20 text-center space-y-4 mt-10'>
             <div className='flex justify-center items-center'>
                 <img className='w-28' src={icon} alt="" />
             </div>

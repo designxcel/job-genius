@@ -47,12 +47,12 @@ const Details = () => {
         <div>
             <Navbar></Navbar>
             
-                <div className="h-auto flex justify-center items-center p-10">
-                    <div className='w-1/2 flex justify-center items-center'>
+                <div className="h-auto flex flex-col md:flex-row justify-center items-center md:p-10">
+                    <div className='md:w-1/2 flex justify-center items-center p-5'>
                         <img src={photo} className="rounded-lg shadow-2xl md:w-[550px]" />
                     </div>
                     
-                    <div className='w-1/2 space-y-2 text-xl'>
+                    <div className='md:w-1/2 space-y-4 text-xl p-5'>
                         <h1 className="text-4xl font-bold">{name}</h1>
                         <p>Brand: {brand}</p>
                         <p>Type: {type}</p>

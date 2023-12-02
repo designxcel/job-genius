@@ -55,6 +55,7 @@ const SignUp = () => {
                 console.log(result.user)
                 const createdAt = result.user?.metadata?.creationTime;
                 const user = {email, photo, password, name, createdAt}
+                // updateUser(result.name, result.photoURL)
                 fetch('http://localhost:5000/user', {
                     method: 'POST',
                     headers: {

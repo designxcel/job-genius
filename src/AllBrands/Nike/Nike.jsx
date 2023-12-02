@@ -23,7 +23,7 @@ const Nike = () => {
                         <h2 className='text-lg underline text-blue-700'>Home / Brand</h2>
                 </Link>
             </div>
-            {/* <Slider></Slider> */}
+            <Slider></Slider>
             <div className='max-w-7xl mx-auto'>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mt-10'>
             {
@@ -44,7 +44,7 @@ const Nike = () => {
                         <Link to={`/details/${nikeItem._id}`}>
                                 <button className="btn bg-cyan-700 hover:bg-orange-500 text-white">Details</button>
                             </Link>
-                            <Link>
+                            <Link to={`/updateproduct/${nikeItem._id}`}>
                                 <button className="btn bg-cyan-700 hover:bg-orange-500 text-white">Update</button>
                             </Link>
                         </div>

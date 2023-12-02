@@ -31,6 +31,7 @@ const AddProducts = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data)
+            form.reset()
             Swal.fire({
                 title: 'Success!',
                 text: 'Product added Successfully',
@@ -114,7 +115,8 @@ const AddProducts = () => {
                             <label className="label">
                                 <span className="label-text">Details</span>
                             </label>
-                            <input type="text" name= "description" placeholder="Enter product description" className="input input-bordered h-32" />
+                            <textarea name= "description" placeholder="Enter product description" className="textarea textarea-bordered textarea-lg w-full" ></textarea>
+                            {/* <input type="text"  placeholder="Enter product description" className="input input-bordered h-32" /> */}
                             </div>
                         </div>
                     </div>

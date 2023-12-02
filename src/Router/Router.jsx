@@ -20,12 +20,12 @@ import Error from '../Pages/Error/Error';
 import Blog from '../Pages/Blog/Blog';
 import CheckOut from '../Pages/CheckOut/CheckOut';
 import Cart from '../Pages/Cart/Cart';
-import BrandName from '../Pages/BrandName/BrandName';
 
 const Router = createBrowserRouter([
     {
         path : "/",
         element : <Root></Root>,
+        errorElement:<Error></Error>,
         children : [
             {
                 path : "/", 
@@ -42,22 +42,11 @@ const Router = createBrowserRouter([
                 loader: ({params})=> fetch(`http://localhost:5000/product/${params.id}`)
             },
             {
-                // ok
                 path: "/details/:id",
                 element : <PrivateRoute><Details></Details></PrivateRoute>,
                 loader: ({params})=> fetch(`http://localhost:5000/product/${params.id}`)
 
             },
-            // {
-            //     path :"/brand",
-            //     element :<Brand></Brand>
-                
-            // },
-            // {
-            //     path: "/brandName",
-            //     element: <BrandName></BrandName>,
-            //     loader : () => fetch('http://localhost:5000/product')
-            // },
             {
                 path: "/adidas",
                 element : <Adidas></Adidas>
@@ -87,26 +76,6 @@ const Router = createBrowserRouter([
                 element:<Zara></Zara>
                 
             },
-            // {
-            //     path: "/brand/nike",
-            //     element : <Nike></Nike>,
-            //     loader : () => fetch('http://localhost:5000/product/nike')
-            // },
-            // {
-            //     path: "/brand/gucci",
-            //     element : <Gucci></Gucci>,
-            //     loader : () => fetch('http://localhost:5000/product/gucci')
-            // },
-            // {
-            //     path: "/brand/levis",
-            //     element : <Levis></Levis>,
-            //     loader : () => fetch('http://localhost:5000/product/levis')
-            // },
-            // {
-            //     path: "/brand/zara",
-            //     element : <Zara></Zara>,
-            //     loader : () => fetch('http://localhost:5000/product/zara')
-            // },
             {
                 path :"/login",
                 element : <Login></Login>
