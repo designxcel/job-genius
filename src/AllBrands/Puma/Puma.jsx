@@ -10,7 +10,7 @@ const Puma = () => {
     const [pumaProducts, setPumaProducts] = useState([])
 
   useEffect(()=>{
-    fetch('http://localhost:5000/product/puma')
+    fetch('https://menzwo-option-fashion.vercel.app/product/puma')
     .then(res => res.json())
     .then(data => {
       setPumaProducts(data)

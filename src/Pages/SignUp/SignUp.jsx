@@ -56,7 +56,7 @@ const SignUp = () => {
                 const createdAt = result.user?.metadata?.creationTime;
                 const user = {email, photo, password, name, createdAt}
                 // updateUser(result.name, result.photoURL)
-                fetch('http://localhost:5000/user', {
+                fetch('https://menzwo-option-fashion.vercel.app/user', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

@@ -8,7 +8,7 @@ const Nike = () => {
     const [nikeProducts, setNikeProducts] = useState([])
 
   useEffect(()=>{
-    fetch('http://localhost:5000/product/Nike')
+    fetch('https://menzwo-option-fashion.vercel.app/product/Nike')
     .then(res => res.json())
     .then(data => {
       setNikeProducts(data)

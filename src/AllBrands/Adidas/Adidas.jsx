@@ -4,13 +4,11 @@ import Slider from "../../Pages/Slider/Slider";
 import { useEffect, useState } from "react";
 
 
-
-
 const Adidas = () => {
   const [adidasProducts, setAdidasProducts] = useState([])
 
   useEffect(()=>{
-    fetch('http://localhost:5000/product/Adidas')
+    fetch('https://menzwo-option-fashion.vercel.app/product/Adidas')
     .then(res => res.json())
     .then(data => {
       setAdidasProducts(data)

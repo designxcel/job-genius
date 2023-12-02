@@ -1,5 +1,4 @@
-import adiBG from '../../assets/images/wave.svg'
-import logo from '../../assets/brandLogo/zara.png'
+
 import { Link, useLoaderData } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import Slider from '../../Pages/Slider/Slider';
@@ -9,7 +8,7 @@ const Zara = () => {
     const [zaraProducts, setZaraProducts] = useState([])
 
   useEffect(()=>{
-    fetch('http://localhost:5000/product/Zara')
+    fetch('https://menzwo-option-fashion.vercel.app/product/Zara')
     .then(res => res.json())
     .then(data => {
       setZaraProducts(data)

@@ -13,7 +13,7 @@ const Brand = () => {
 
         const newBrand = {photo, name}
 
-        fetch('http://localhost:5000/brand', {
+        fetch('https://menzwo-option-fashion.vercel.app/brand', {
             method : 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -3,7 +3,6 @@ import { createBrowserRouter } from 'react-router-dom';
 import Home from '../Pages/Home/Home';
 import Root from '../Pages/Root/Root';
 import AddProducts from '../Pages/AddProducts/AddProducts';
-import Brand from '../Pages/Brand/Brand';
 import Login from '../Pages/Login/Login';
 import SignUp from '../Pages/SignUp/SignUp';
 import PrivateRoute from './PrivateRoute';
@@ -39,12 +38,12 @@ const Router = createBrowserRouter([
             {
                 path: "/updateproduct/:id",
                 element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:5000/product/${params.id}`)
+                loader: ({params})=> fetch(`https://menzwo-option-fashion.vercel.app/product/${params.id}`)
             },
             {
                 path: "/details/:id",
                 element : <PrivateRoute><Details></Details></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:5000/product/${params.id}`)
+                loader: ({params})=> fetch(`https://menzwo-option-fashion.vercel.app/product/${params.id}`)
 
             },
             {
@@ -87,7 +86,7 @@ const Router = createBrowserRouter([
             {
                 path: "/allproducts",
                 element: <AllProducts></AllProducts>,
-                loader : () => fetch('http://localhost:5000/product')
+                loader : () => fetch('https://menzwo-option-fashion.vercel.app/product')
             },
             {
                 path: "/blog",
@@ -96,7 +95,7 @@ const Router = createBrowserRouter([
             {
                 path: "/checkout/:id",
                 element: <CheckOut></CheckOut>,
-                loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+                loader: ({params}) => fetch(`https://menzwo-option-fashion.vercel.app/product/${params.id}`)
             },
             {
                 path: "/cart",

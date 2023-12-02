@@ -9,7 +9,7 @@ const Levis = () => {
     const [levisProducts, setLevisProducts] = useState([])
 
   useEffect(()=>{
-    fetch('http://localhost:5000/product/Levis')
+    fetch('https://menzwo-option-fashion.vercel.app/product/Levis')
     .then(res => res.json())
     .then(data => {
       setLevisProducts(data)

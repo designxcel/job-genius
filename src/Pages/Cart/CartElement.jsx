@@ -1,11 +1,8 @@
-import { useContext } from "react";
-import Swal from "sweetalert2";
-import { AuthContext } from "../Provider/AuthProvider";
+
 
 
 const CartElement = ({itemCart,handleDelete}) => {
     const {_id, name, email, photo, price, brand} = itemCart;
-    const {user} = useContext(AuthContext)
 
     return (
         <div>

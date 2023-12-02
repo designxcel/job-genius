@@ -21,7 +21,7 @@ const AddProducts = () => {
         const newProduct = {name, brand, type, price, rating, photo, description}
         
 
-        fetch('http://localhost:5000/product',{
+        fetch('https://menzwo-option-fashion.vercel.app/product',{
             method : 'POST',
             headers : {
                 'content-type': 'application/json'

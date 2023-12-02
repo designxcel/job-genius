@@ -13,7 +13,7 @@ const Cart = () => {
     const navigate = useNavigate()
 
     useEffect(() =>{
-        fetch(`http://localhost:5000/bookings?email=${user?.email}`)
+        fetch(`https://menzwo-option-fashion.vercel.app/bookings?email=${user?.email}`)
         .then(res => res.json())
         .then(data => setCartProduct(data))
     },[])
@@ -30,7 +30,7 @@ const Cart = () => {
           }).then((result) => {
             if (result.isConfirmed) {
               
-            fetch(`http://localhost:5000/bookings/${id}`, {
+            fetch(`https://menzwo-option-fashion.vercel.app/bookings/${id}`, {
                 method : 'DELETE'
             })
             .then(res => res.json())
