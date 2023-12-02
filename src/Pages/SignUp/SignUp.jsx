@@ -55,7 +55,7 @@ const SignUp = () => {
                 console.log(result.user)
                 const createdAt = result.user?.metadata?.creationTime;
                 const user = {email, photo, password, name, createdAt}
-                fetch('https://fashion-brand-server-side.vercel.app/user', {
+                fetch('http://localhost:5000/user', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -82,8 +82,8 @@ const SignUp = () => {
     }
 
     return (
-        <div style={{backgroundImage: `url(${signupBG})`}} className='bg-cover h-[100vh] flex justify-center items-center'>
-    
+        <div className='bg-cover h-[100vh] flex justify-center items-center'>
+                 {/* style={{backgroundImage: `url(${signupBG})`}} */}
                 <div className="shadow-2xl rounded-lg bg-base-100 w-96 h-auto">
                     <form onSubmit={handleSignUp} className="card-body">    
                     <h1 className="text-5xl font-bold mb-6 text-center">Signup Here!</h1>

@@ -1,10 +1,18 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 import Slider from "../../Pages/Slider/Slider";
+import { useEffect, useState } from "react";
 
 const Adidas = () => {
-  const brandAdidas = useLoaderData();
-  // const {_id} = brandAdidas;
+  const [adidasProducts, setAdidasProducts] = useState([])
+
+  useEffect(()=>{
+    fetch('http://localhost:5000/product/Adidas')
+    .then(res => res.json())
+    .then(data => {
+      setAdidasProducts(data)
+    })
+  }, [])
 
   return (
     <div>
@@ -14,11 +22,11 @@ const Adidas = () => {
           <h2 className="text-lg underline text-blue-700">Home / Brand</h2>
         </Link>
       </div>
-      <Slider></Slider>
+      {/* <Slider></Slider> */}
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
-          {brandAdidas.map((adiItem) => (
-            <div className="card md:w-96 bg-base-100 shadow-xl p-5">
+          {adidasProducts.map((adiItem) => (
+            <div key={adiItem._id} className="card md:w-96 bg-base-100 shadow-xl p-5">
               <figure>
                 <img className="h-60 w-full" src={adiItem.photo} alt="Shoes" />
               </figure>
@@ -42,7 +50,7 @@ const Adidas = () => {
                       Details
                     </button>
                   </Link>
-                  <Link to={`/updateproduct/${adiItem._id}`}>
+                  <Link>
                     <button className="btn bg-cyan-700 hover:bg-orange-500 text-white">
                       Update
                     </button>

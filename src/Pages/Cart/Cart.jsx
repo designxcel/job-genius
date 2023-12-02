@@ -9,8 +9,9 @@ import Swal from "sweetalert2";
 const Cart = () => {
     const {user} = useContext(AuthContext)
     const [cartProduct, setCartProduct] = useState([])
+
     useEffect(() =>{
-        fetch(`https://fashion-brand-server-side.vercel.app/bookings?email=${user?.email}`)
+        fetch(`http://localhost:5000/bookings?email=${user?.email}`)
         .then(res => res.json())
         .then(data => setCartProduct(data))
     },[])
@@ -27,7 +28,7 @@ const Cart = () => {
           }).then((result) => {
             if (result.isConfirmed) {
               
-            fetch(`https://fashion-brand-server-side.vercel.app/bookings/${id}`, {
+            fetch(`http://localhost:5000/bookings/${id}`, {
                 method : 'DELETE'
             })
             .then(res => res.json())
@@ -41,7 +42,6 @@ const Cart = () => {
                       )
                       const remaining = cartProduct.filter(product =>product._id !== id)
                       setCartProduct(remaining)
-                    //   console.log(remaining)
                 }
             })
             }
@@ -63,10 +63,10 @@ const Cart = () => {
                         </label>
                     </th>
                     <th>Image</th>
-                    <th>Customer Name</th>
-                    {/* <th>Product Name</th> */}
+                    <th>Product Name</th>
                     <th>Price</th>
                     <th>Brand</th>
+                    <th>Email</th>
                     </tr>
                 </thead>
                 <tbody>

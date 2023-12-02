@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Footer from '../Footer/Footer';
-import Adidas from '../AllProducts/AllProducts';
 
 const Brand = () => {
 
@@ -14,7 +13,7 @@ const Brand = () => {
 
         const newBrand = {photo, name}
 
-        fetch('https://fashion-brand-server-side.vercel.app/brand', {
+        fetch('http://localhost:5000/brand', {
             method : 'POST',
             headers: {
                 'content-type': 'application/json'

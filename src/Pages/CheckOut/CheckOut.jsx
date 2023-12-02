@@ -30,7 +30,7 @@ const CheckOut = () => {
         }
         console.log(orderList)
 
-        fetch('https://fashion-brand-server-side.vercel.app/bookings',{
+        fetch('http://localhost:5000/bookings',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

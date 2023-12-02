@@ -3,10 +3,19 @@ import logo from '../../assets/brandLogo/puma.png'
 import { Link, useLoaderData } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import Slider from '../../Pages/Slider/Slider';
+import { useEffect, useState } from 'react';
 
 
 const Puma = () => {
-    const brandPuma = useLoaderData();
+    const [pumaProducts, setPumaProducts] = useState([])
+
+  useEffect(()=>{
+    fetch('http://localhost:5000/product/puma')
+    .then(res => res.json())
+    .then(data => {
+      setPumaProducts(data)
+    })
+  }, [])
     return (
         <div>
             <div className='mt-4 ml-10 flex justify-start items-center gap-4'>
@@ -15,12 +24,12 @@ const Puma = () => {
                         <h2 className='text-lg underline text-blue-700'>Home / Brand</h2>
                 </Link>
             </div>
-            <Slider></Slider>
+            {/* <Slider></Slider> */}
             <div className='max-w-7xl mx-auto'>
 
 <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mt-10'>
     {
-        brandPuma.map(pumaItem =>
+        pumaProducts.map(pumaItem =>
             <div key={pumaItem._id} className="card md:w-96 bg-base-100 shadow-xl p-5">
             <figure><img className='h-60 w-full' src={pumaItem.photo} alt="Shoes" /></figure>
             <div className="card-body">
@@ -37,7 +46,7 @@ const Puma = () => {
                             <Link to={`/details/${pumaItem._id}`}>
                                 <button className="btn bg-cyan-700 hover:bg-orange-500 text-white">Details</button>
                             </Link>
-                            <Link to={`/updateproduct/${pumaItem._id}`}>
+                            <Link>
                                 <button className="btn bg-cyan-700 hover:bg-orange-500 text-white">Update</button>
                             </Link>
                         </div>

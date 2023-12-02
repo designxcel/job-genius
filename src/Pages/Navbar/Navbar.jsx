@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 import userIcon from '../../assets/images/user.png'
@@ -8,6 +8,7 @@ import userIcon from '../../assets/images/user.png'
 const Navbar = () => {
 
     const {user, logOut} = useContext(AuthContext)
+    const navigate = useNavigate()
 
     const handleSignOut = () =>{
         logOut()
@@ -18,6 +19,7 @@ const Navbar = () => {
                 icon: 'success',
                 confirmButtonText: 'Cool'
               })
+              navigate('/')
         })
         .catch(error => {
             console.log(error)
@@ -27,13 +29,14 @@ const Navbar = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/addproducts">Add Products</NavLink></li>
         <li><NavLink to="/blog">Blogs</NavLink></li>
-        <li><NavLink to="/login">Login/Register</NavLink></li>
-        {
-          user?.email? 
-          <li><Link to="/cart">My Bookings</Link></li>
-          :
-          <li><Link to="/cart">Cart</Link></li>
-        }
+        {/* <li><NavLink to="/login">Login/Register</NavLink></li> */}
+        { user?.email? <>
+            <li><Link to="/cart">Cart</Link></li>
+        </> 
+        : 
+        <>
+        </>
+            }
     </>
 
     return (

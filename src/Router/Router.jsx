@@ -20,17 +20,16 @@ import Error from '../Pages/Error/Error';
 import Blog from '../Pages/Blog/Blog';
 import CheckOut from '../Pages/CheckOut/CheckOut';
 import Cart from '../Pages/Cart/Cart';
+import BrandName from '../Pages/BrandName/BrandName';
 
 const Router = createBrowserRouter([
     {
         path : "/",
         element : <Root></Root>,
-        errorElement: <Error></Error>,
         children : [
             {
                 path : "/", 
-                element : <Home></Home>,
-                loader :() => fetch('https://fashion-brand-server-side.vercel.app/brand')
+                element : <Home></Home>
             },
             {
                 path : "/addproducts",
@@ -40,49 +39,74 @@ const Router = createBrowserRouter([
             {
                 path: "/updateproduct/:id",
                 element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-                loader: ({params})=> fetch(`https://fashion-brand-server-side.vercel.app/product/${params.id}`)
+                loader: ({params})=> fetch(`http://localhost:5000/product/${params.id}`)
             },
             {
+                // ok
                 path: "/details/:id",
                 element : <PrivateRoute><Details></Details></PrivateRoute>,
-                loader: ({params})=> fetch(`https://fashion-brand-server-side.vercel.app/product/${params.id}`)
+                loader: ({params})=> fetch(`http://localhost:5000/product/${params.id}`)
 
             },
+            // {
+            //     path :"/brand",
+            //     element :<Brand></Brand>
+                
+            // },
+            // {
+            //     path: "/brandName",
+            //     element: <BrandName></BrandName>,
+            //     loader : () => fetch('http://localhost:5000/product')
+            // },
             {
-                path :"/brand",
-                element :<Brand></Brand>
+                path: "/adidas",
+                element : <Adidas></Adidas>
+            },
+            {
+                path: "/nike",
+                element:<Nike></Nike>
                 
             },
             {
-                path: "/brand/adidas",
-                element : <Adidas></Adidas>,
-                loader : () => fetch('https://fashion-brand-server-side.vercel.app/product/adidas')
+                path: "/puma",
+                element:<Puma></Puma>
+                
             },
             {
-                path: "/brand/puma",
-                element : <Puma></Puma>,
-                loader : () => fetch('https://fashion-brand-server-side.vercel.app/product/puma')
+                path: "/levis",
+                element:<Levis></Levis>
+                
             },
             {
-                path: "/brand/nike",
-                element : <Nike></Nike>,
-                loader : () => fetch('https://fashion-brand-server-side.vercel.app/product/nike')
+                path: "/gucci",
+                element:<Gucci></Gucci>
+                
             },
             {
-                path: "/brand/gucci",
-                element : <Gucci></Gucci>,
-                loader : () => fetch('https://fashion-brand-server-side.vercel.app/product/gucci')
+                path: "/zara",
+                element:<Zara></Zara>
+                
             },
-            {
-                path: "/brand/levis",
-                element : <Levis></Levis>,
-                loader : () => fetch('https://fashion-brand-server-side.vercel.app/product/levis')
-            },
-            {
-                path: "/brand/zara",
-                element : <Zara></Zara>,
-                loader : () => fetch('https://fashion-brand-server-side.vercel.app/product/zara')
-            },
+            // {
+            //     path: "/brand/nike",
+            //     element : <Nike></Nike>,
+            //     loader : () => fetch('http://localhost:5000/product/nike')
+            // },
+            // {
+            //     path: "/brand/gucci",
+            //     element : <Gucci></Gucci>,
+            //     loader : () => fetch('http://localhost:5000/product/gucci')
+            // },
+            // {
+            //     path: "/brand/levis",
+            //     element : <Levis></Levis>,
+            //     loader : () => fetch('http://localhost:5000/product/levis')
+            // },
+            // {
+            //     path: "/brand/zara",
+            //     element : <Zara></Zara>,
+            //     loader : () => fetch('http://localhost:5000/product/zara')
+            // },
             {
                 path :"/login",
                 element : <Login></Login>
@@ -94,7 +118,7 @@ const Router = createBrowserRouter([
             {
                 path: "/allproducts",
                 element: <AllProducts></AllProducts>,
-                loader : () => fetch('https://fashion-brand-server-side.vercel.app/product')
+                loader : () => fetch('http://localhost:5000/product')
             },
             {
                 path: "/blog",
@@ -103,7 +127,7 @@ const Router = createBrowserRouter([
             {
                 path: "/checkout/:id",
                 element: <CheckOut></CheckOut>,
-                loader: ({params}) => fetch(`https://fashion-brand-server-side.vercel.app/product/${params.id}`)
+                loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
             },
             {
                 path: "/cart",

@@ -74,8 +74,8 @@ const Login = () => {
         })
     }
     return (
-        <div  style={{backgroundImage: `url(${loginBG})`}} className='bg-cover h-[100vh] flex justify-center items-center'>
-                
+        <div className='bg-cover h-[100vh] flex justify-center items-center'>
+             {/* style={{backgroundImage: `url(${loginBG})`}}    */}
                 <div className="shadow-2xl rounded-lg bg-base-100 w-96 h-auto">
                 <div className='text-2xl p-5 hover:text-orange-500 text-cyan-700'>
                     <Link to="/">
