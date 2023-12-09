@@ -11,6 +11,14 @@ Have a look Please:
 5. added google authentication
 6. have some validation .
 7. Also website has valid newsletter section in the footer.
+8. it has dyanamic testimonial section.
+9. you can see the products details page.
+10. product detail page has add to cart option. 
+11. you can see all your cart item.
+12. it has option to add more products
+13. also have some update/edit option for the products.
+
+and many more will be added soon...
 
 
 
