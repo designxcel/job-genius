@@ -1,5 +1,7 @@
 # MENZWO OPTION 
 
+### LiveLink: https://fashion-brand-4d7fd.web.app/
+
 Have a look Please:
 
 1. Firstly all data fetching from the database. I have created product related database, User related  also brand related database.
@@ -10,8 +12,5 @@ Have a look Please:
 6. have some validation .
 7. Also website has valid newsletter section in the footer.
 
-LiveLink: https://fashion-brand-4d7fd.web.app/
 
 
-add products:https://fashion-brand-4d7fd.web.app/addproducts
-for adding brand: https://fashion-brand-4d7fd.web.app/brand
