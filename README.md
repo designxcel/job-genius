@@ -2,6 +2,18 @@
 
 ### LiveLink: https://fashion-brand-4d7fd.web.app/
 
+#### Language that i used for this project
+------------------------------------------
+1. for frontend - 
+    ## 1.1 React Js
+    ## 1.2 tailwindCSS (css framework)
+    ## 1.3 react router
+    ## 1.4 DaisyUI (component library for tailwind CSS)
+    ## 1.5 firebase (for authentication system)
+
+2. for backend - 
+    ## 2.1 mongoDB (for database)
+    
 Have a look Please:
 
 1. Firstly all data fetching from the database. I have created product related database, User related  also brand related database.
